@@ -1,23 +1,77 @@
 {
-    "protocols": {
+        "interfaces": {
+            "ethernet": {
+                "eth0": {
+                    "firewall": {
+                        "in": {
+                            "name": "WAN_IN"
+                        },
+                        "local": {
+                            "name": "WAN_LOCAL"
+                        },
+                        "out": {
+                            "name": "WAN_OUT"
+                        }
+                    },
+                    "description":"WAN",
+                    "mac":"bc:99:11:0c:2c:fe",
+                    "dhcp-options": {
+                        "default-route": "no-update",
+                        "name-server": "no-update"
+                    },
+                    "vif": {
+                        "4": {
+                            "address": [
+                                "dhcp"
+                            ],
+                            "description":"Online_IPTV",
+                            "dhcp-options": {
+                                "client-option": [
+                                    "send vendor-class-identifier &quot;dlsforum.org&quot;;"
+                                ]
+                            },
+                            "ip": {
+                                "source-validation": "loose"
+                            }
+                        }
+                    }
+
+                }
+            }
+        },
+        "protocols": {
             "igmp-proxy": {
-                    "interface": {
-                            "eth0": {
-                                    "alt-subnet": [ "0.0.0.0/0" ],
-                                    "role": "upstream",
-                                    "threshold": "1"
-                                    },
-                            "eth1": {
-                                    "alt-subnet": [ "0.0.0.0/0" ],
-                                    "role": "downstream",
-                                    "threshold": "1",
-                                    "whitelist": [
-                                        "239.0.0.0/16",
-                                        "225.0.71.0/24",
-                                        "224.0.0.0/16"
-                                    ]
-                                    }
-                                 }
-                          }
-                 }
-}
+                "interface": {
+                    "eth0.4": {
+                        "alt-subnet": [
+                            "0.0.0.0/0"
+                        ],
+                        "role": "upstream",
+                        "threshold": "1"
+                    },
+                    "eth1": {
+                        "alt-subnet": [
+                            "0.0.0.0/0"
+                        ],
+                        "role": "downstream",
+                        "threshold": "1",
+                        "whitelist": [
+                                "225.0.71.0/24",
+                                "239.0.3.0/16",
+                                "224.0.0.0/16"
+                        ]
+                    }
+                }
+            },
+            "static": {
+                "interface-route": {
+                    "0.0.0.0/0": {
+                        "next-hop": {
+                            "85.149.0.1": "''"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
