@@ -1,23 +1,4 @@
 {
-        "firewall": {
-                "name": {
-                        "IPTV_LOCAL": {
-                                "description": "WAN IPTV to router",
-                                "default-action": "accept",
-                                "rule": {
-                                        "10": {
-                                                "action": "accept",
-                                                "description": "Allow established/related",
-                                                "state": {
-                                                        "established": "enabled",
-                                                        "related": "enabled"
-                                                }
-                                        }
-                                        
-                                }
-                        }
-        }
-},
         "interfaces": {
                 "ethernet": {
                         "eth0": {
