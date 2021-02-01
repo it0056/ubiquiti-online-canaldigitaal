@@ -1,8 +1,33 @@
 {
+        "interfaces": {
+                "ethernet": {
+                        "eth0": {
+                                "description": "WAN",
+                                "mac": "bc:99:11:0c:2d:02",
+                                "vif": {
+                                        "4": {
+                                                "address": [
+                                                        "dhcp"
+                                                ],
+                                                "description": "Online_IPTV",
+                                                "mac": "bc:99:11:0c:2d:03",
+                                                "dhcp-options": {
+                                                        "client-option": [
+                                                                "send vendor-class-identifier &quot;dlsforum.org&quot;;"
+                                                        ]
+                                                },
+                                                "ip": {
+                                                        "source-validation": "loose"
+                                                }
+                                        }
+                                }
+                        }
+                }
+        },
         "protocols": {
                 "igmp-proxy": {
                         "interface": {
-                                "eth0": {
+                                "eth0.4": {
                                         "alt-subnet": [
                                                 "0.0.0.0/0"
                                         ],
