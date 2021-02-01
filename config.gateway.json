@@ -2,7 +2,7 @@
         "protocols": {
                 "igmp-proxy": {
                         "interface": {
-                                "eth0.4": {
+                                "eth0": {
                                         "alt-subnet": [
                                                 "0.0.0.0/0"
                                         ],
