@@ -1,44 +1,4 @@
 {
-        "interfaces": {
-                "ethernet": {
-                        "eth0": {
-                                "firewall": {
-                                        "in": {
-                                                "name": "WAN_IN"
-                                        },
-                                        "local": {
-                                                "name": "WAN_LOCAL"
-                                        },
-                                        "out": {
-                                                "name": "WAN_OUT"
-                                        }
-                                },
-                                "description": "WAN",
-                                "mac": "bc:99:11:0c:2d:02",
-                                "dhcp-options": {
-                                        "default-route": "no-update",
-                                        "name-server": "no-update"
-                                },
-                                "vif": {
-                                        "4": {
-                                                "address": [
-                                                        "dhcp"
-                                                ],
-                                                "description": "Online_IPTV",
-                                                "mac": "bc:99:11:0c:2d:03",
-                                                "dhcp-options": {
-                                                        "client-option": [
-                                                                "send vendor-class-identifier &quot;dlsforum.org&quot;;"
-                                                        ]
-                                                },
-                                                "ip": {
-                                                        "source-validation": "loose"
-                                                }
-                                        }
-                                }
-                        }
-                }
-        },
         "protocols": {
                 "igmp-proxy": {
                         "interface": {
