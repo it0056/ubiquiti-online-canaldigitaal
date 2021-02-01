@@ -1,4 +1,23 @@
 {
+        "firewall": {
+                "name": {
+                        "IPTV_LOCAL": {
+                                "description": "WAN IPTV to router",
+                                "default-action": "accept",
+                                "rule": {
+                                        "10": {
+                                                "action": "accept",
+                                                "description": "Allow established/related",
+                                                "state": {
+                                                        "established": "enabled",
+                                                        "related": "enabled"
+                                                }
+                                        }
+                                        
+                                }
+                        }
+        }
+},
         "interfaces": {
                 "ethernet": {
                         "eth0": {
@@ -14,7 +33,7 @@
                                         }
                                 },
                                 "description": "WAN",
-                                "mac": "bc:99:11:0c:2c:fe",
+                                "mac": "bc:99:11:0c:2d:02",
                                 "dhcp-options": {
                                         "default-route": "no-update",
                                         "name-server": "no-update"
@@ -25,6 +44,7 @@
                                                         "dhcp"
                                                 ],
                                                 "description": "Online_IPTV",
+                                                "mac": "bc:99:11:0c:2d:03",
                                                 "dhcp-options": {
                                                         "client-option": [
                                                                 "send vendor-class-identifier &quot;dlsforum.org&quot;;"
