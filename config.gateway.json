@@ -2,6 +2,11 @@
         "interfaces": {
                 "ethernet": {
                         "eth0": {
+                                "dhcp-options": {
+                                        "default-route": "no-update",
+                                        "default-route-distance": "1",
+                                        "name-server": "no-update"
+                                        },
                                 "description": "WAN",
                                 "mac": "bc:99:11:0c:2d:02",
                                 "vif": {
@@ -9,6 +14,12 @@
                                                 "address": [
                                                         "dhcp"
                                                 ],
+                                                "dhcp-options": {
+                                                        "default-route-distance": "1"
+                                                        },
+                                                "ip": {
+                                                        "source-validation": "loose"
+                                                        },
                                                 "description": "Online_IPTV",
                                                 "mac": "bc:99:11:0c:2d:03"
                                         }
