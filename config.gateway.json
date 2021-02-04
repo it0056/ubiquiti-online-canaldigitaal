@@ -15,6 +15,10 @@
                                                         "dhcp"
                                                 ],
                                                 "dhcp-options": {
+                                                        "client-option": [
+                                                                "send vendor-class-identifier &quot;IPTV_RG&quot;;",
+                                                                "request subnet-mask, routers, rfc3442-classless-static-routes;"
+                                                        ],
                                                         "default-route-distance": "1"
                                                         },
                                                 "ip": {
