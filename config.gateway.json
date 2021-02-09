@@ -1,40 +1,8 @@
 {
-        "interfaces": {
-                "ethernet": {
-                        "eth0": {
-                                "dhcp-options": {
-                                        "default-route": "no-update",
-                                        "default-route-distance": "1",
-                                        "name-server": "no-update"
-                                        },
-                                "description": "WAN",
-                                "mac": "bc:99:11:0c:2d:02",
-                                "vif": {
-                                        "4": {
-                                                "address": [
-                                                        "dhcp"
-                                                ],
-                                                "dhcp-options": {
-                                                        "client-option": [
-                                                                "send vendor-class-identifier &quot;IPTV_RG&quot;;",
-                                                                "request subnet-mask, routers, rfc3442-classless-static-routes;"
-                                                        ],
-                                                        "default-route-distance": "1"
-                                                        },
-                                                "ip": {
-                                                        "source-validation": "loose"
-                                                        },
-                                                "description": "Online_IPTV",
-                                                "mac": "bc:99:11:0c:2d:03"
-                                        }
-                                }
-                        }
-                }
-        },
         "protocols": {
                 "igmp-proxy": {
                         "interface": {
-                                "eth0.4": {
+                                "eth0": {
                                         "alt-subnet": [
                                                 "0.0.0.0/0"
                                         ],
@@ -49,8 +17,8 @@
                                         "threshold": "1",
                                         "whitelist": [
                                                 "225.0.71.0/24",
-                                                "239.0.3.0/16",
-                                                "224.0.0.0/16"
+                                                "224.0.252.0/24",
+                                                "224.0.1.127"
                                         ]
                                 }
                         }
